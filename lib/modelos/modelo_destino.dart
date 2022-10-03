@@ -1,5 +1,3 @@
-import 'package:mobile_project/modelos/modelo_actividad.dart';
-
 class Destinos {
   String imageUrl;
   String ciudad;
@@ -25,7 +23,7 @@ List<Destinos> destinos = [
     imageUrl: 'assets/images/puertomontt.jpg',
     ciudad: 'Puerto Montt',
     pais: 'Chile',
-    descripcion: 'Visita Puerto Montt para vivir momentos espectaculres.',
+    descripcion: 'Visita Puerto Montt para vivir momentos lindos.',
   ),
   Destinos(
     imageUrl: 'assets/images/patagonia.jpg',
