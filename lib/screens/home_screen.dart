@@ -11,9 +11,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List<IconData> _icons = [
-    FontAwesomeIcons.plane,
-    FontAwesomeIcons.biking,
-    FontAwesomeIcons.walking,
+    FontAwesomeIcons.plus,
+    FontAwesomeIcons.minus,
     FontAwesomeIcons.book,
   ];
 
