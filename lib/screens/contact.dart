@@ -32,45 +32,36 @@ class ContactView extends StatelessWidget {
               height: 10,
             ),
             Text('Deseo recibir info desde'),
-            // a date picker that has today's date as the default
+            // a date selector
             Row(
               children: <Widget>[
-                const Text('Desde'),
-                const SizedBox(
-                  width: 10,
-                ),
                 Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('25-05-2022',
-                          style: const TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                          )),
-                      IconButton(
-                        icon: const Icon(Icons.calendar_today,
-                            color: Colors.lightBlue),
-                        onPressed: () {},
-                      ),
-                    ],
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: 'Fecha',
+                    ),
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                    ),
+                    keyboardType: TextInputType.datetime,
                   ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.calendar_today),
+                  onPressed: () {},
                 ),
               ],
             ),
-
+            SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
               onPressed: () {},
-              child: const Text('Enviar solicitud de contacto'),
-              // width
+              child: const Text('Enviar'),
               style: ElevatedButton.styleFrom(
-                minimumSize: const Size(1000, 36),
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                primary: Colors.orange,
+                primary: Colors.green,
                 onPrimary: Colors.white,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(2)),
-                ),
+                minimumSize: const Size(1000, 36),
               ),
             ),
           ],
