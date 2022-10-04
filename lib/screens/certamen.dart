@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
 
-class certamen extends StatelessWidget {
+import 'package:mobile_project/screens/contact.dart';
+import 'package:mobile_project/screens/services.dart';
+
+class Exam extends StatefulWidget {
+  @override
+  _ExamState createState() => _ExamState();
+}
+
+class _ExamState extends State<Exam> with TickerProviderStateMixin {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: 2);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,6 +45,26 @@ class certamen extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
+        ),
+        body: TabBarView(
+          controller: _tabController,
+          children: [
+            ServicesView(),
+            ContactView(),
+          ],
+        ),
+        bottomNavigationBar: TabBar(
+          controller: _tabController,
+          tabs: [
+            Tab(
+              icon: Icon(Icons.person),
+              text: 'Contacto',
+            ),
+            Tab(
+              icon: Icon(Icons.star),
+              text: 'Servicios',
+            ),
+          ],
         ),
       ),
     );
