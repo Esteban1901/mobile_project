@@ -16,29 +16,53 @@ class _HomeScreenState extends State<HomeScreen> {
     FontAwesomeIcons.book,
   ];
 
+  List<int> _counters = [0, 0, 0];
+
   Widget _buildIcon(int index) {
     return GestureDetector(
       onTap: () {
         setState(() {
           _selectedIndex = index;
+          if (_selectedIndex < 2) {
+            if (_selectedIndex == 0) {
+              _counters[_selectedIndex]++;
+            } else {
+              _counters[_selectedIndex]--;
+            }
+          } else {
+            _counters[_selectedIndex] = 0;
+          }
         });
       },
-      child: Container(
-        height: 60.0,
-        width: 60.0,
-        decoration: BoxDecoration(
-          color: _selectedIndex == index
-              ? Theme.of(context).accentColor
-              : Color(0xFFE7EBEE),
-          borderRadius: BorderRadius.circular(30.0),
-        ),
-        child: Icon(
-          _icons[index],
-          size: 25.0,
-          color: _selectedIndex == index
-              ? Theme.of(context).primaryColor
-              : Color(0xFFB4C1C4),
-        ),
+      child: Column(
+        children: [
+          Container(
+            height: 60.0,
+            width: 60.0,
+            decoration: BoxDecoration(
+              color: _selectedIndex == index
+                  ? Theme.of(context).accentColor
+                  : Color(0xFFE7EBEE),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
+            child: Icon(
+              _icons[index],
+              size: 25.0,
+              color: _selectedIndex == index
+                  ? Theme.of(context).primaryColor
+                  : Color(0xFFB4C1C4),
+            ),
+          ),
+          Text(
+            '${index < 2 ? _counters[index] : ''}',
+            style: TextStyle(
+              fontSize: 18.0,
+              color: _selectedIndex == index
+                  ? Theme.of(context).primaryColor
+                  : Color(0xFFB4C1C4),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -60,13 +84,11 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 20.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: _icons
-                  .asMap()
-                  .entries
-                  .map(
-                    (MapEntry map) => _buildIcon(map.key),
-                  )
-                  .toList(),
+              children: <Widget>[
+                _buildIcon(0),
+                _buildIcon(1),
+                _buildIcon(2),
+              ],
             ),
             SizedBox(height: 20.0),
             widgetDestino(),
