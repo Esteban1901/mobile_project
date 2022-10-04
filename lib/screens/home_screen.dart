@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
               _counters[_selectedIndex]--;
             }
           } else {
-            _counters[_selectedIndex] = 0;
+            Navigator.pushNamed(context, '/certamen');
           }
         });
       },
