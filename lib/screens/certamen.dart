@@ -30,9 +30,6 @@ class certamen extends StatelessWidget {
             },
           ),
         ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
       ),
     );
   }
