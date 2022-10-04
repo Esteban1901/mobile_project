@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_project/screens/certamen.dart';
 import 'package:mobile_project/screens/home_screen.dart';
+import 'package:mobile_project/screens/servicios_turismo.dart';
 
 void main() => runApp(MyApp());
 

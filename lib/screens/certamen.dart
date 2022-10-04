@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_project/screens/contacto.dart';
+import 'package:mobile_project/screens/servicios_turismo.dart';
 
-class certamen extends StatelessWidget {
+class certamen extends StatefulWidget {
+  @override
+  _certamenState createState() => _certamenState();
+}
+
+class _certamenState extends State<certamen> with TickerProviderStateMixin {
+  TabController _tabPages;
+  int index = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabPages = TabController(length: 3, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,8 +51,31 @@ class certamen extends StatelessWidget {
             },
           ),
         ),
-        body: const Center(
-          child: Text('Hello World'),
+        body: TabBarView(
+          controller: _tabPages,
+          children: [
+            contacto(),
+            turismo(),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: index,
+          onTap: (int index) {
+            setState(() {
+              this.index = index;
+              _tabPages.animateTo(index);
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Contacto',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.airplanemode_active),
+              label: 'Turismo',
+            ),
+          ],
         ),
       ),
     );

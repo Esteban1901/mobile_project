@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_project/screens/certamen.dart';
 
-class turismo extends StatelessWidget {
+import 'package:flutter/cupertino.dart';
+
+class contacto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        body: const Center(
+    return const CupertinoApp(
+      title: 'Cupertino App',
+      home: CupertinoPageScaffold(
+        child: Center(
           child: Text('Hello World'),
         ),
       ),
