@@ -22,8 +22,9 @@ class _certamenState extends State<certamen> with TickerProviderStateMixin {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
+        backgroundColor: Colors.purple[50],
         appBar: AppBar(
-          backgroundColor: Colors.purple[200],
+          backgroundColor: Colors.purple,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
