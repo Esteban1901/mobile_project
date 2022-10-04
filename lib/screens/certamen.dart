@@ -11,7 +11,7 @@ class certamen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(Icons.home),
+                Icon(Icons.rocket_launch),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                 ),
@@ -24,7 +24,7 @@ class certamen extends StatelessWidget {
                 ),
               ]),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new),
+            icon: Icon(Icons.arrow_back_ios_new, size: 20.0),
             onPressed: () {
               Navigator.pop(context);
             },
