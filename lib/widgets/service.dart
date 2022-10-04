@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ServiceWidget extends StatelessWidget {
-  const ServiceWidget({this.title, this.price, this.icon, this.movie});
+  const ServiceWidget({this.title, this.price, this.icon, this.type});
 
   final String title;
   final String price;
   final IconData icon;
-  final String movie;
+  final String type;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -44,7 +44,7 @@ class ServiceWidget extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 20),
                           ),
                           Text(
-                            movie,
+                            type,
                             style: const TextStyle(
                                 fontWeight: FontWeight.normal, fontSize: 14),
                           ),

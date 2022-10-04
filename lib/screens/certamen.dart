@@ -10,6 +10,7 @@ class Exam extends StatefulWidget {
 
 class _ExamState extends State<Exam> with TickerProviderStateMixin {
   TabController _tabController;
+  int navIndex = 0;
 
   @override
   void initState() {
@@ -23,6 +24,7 @@ class _ExamState extends State<Exam> with TickerProviderStateMixin {
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.green,
           title: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,16 +55,25 @@ class _ExamState extends State<Exam> with TickerProviderStateMixin {
             ContactView(),
           ],
         ),
-        bottomNavigationBar: TabBar(
-          controller: _tabController,
-          tabs: [
-            Tab(
-              icon: Icon(Icons.person),
-              text: 'Contacto',
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: navIndex,
+          onTap: (index) {
+            setState(() {
+              navIndex = index;
+              _tabController.animateTo(navIndex);
+            });
+          },
+          backgroundColor: Colors.green,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white.withOpacity(0.5),
+          items: [
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.home),
+              label: 'Servicios',
             ),
-            Tab(
-              icon: Icon(Icons.star),
-              text: 'Servicios',
+            BottomNavigationBarItem(
+              icon: new Icon(Icons.mail),
+              label: 'Contacto',
             ),
           ],
         ),

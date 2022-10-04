@@ -13,14 +13,6 @@ class ContactView extends StatelessWidget {
           children: <Widget>[
             TextFormField(
               decoration: const InputDecoration(
-                labelText: 'Name',
-              ),
-              style: const TextStyle(
-                fontSize: 14.0,
-              ),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
                 labelText: 'Email',
               ),
               style: const TextStyle(
@@ -34,26 +26,7 @@ class ContactView extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 14.0,
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text('Deseo recibir info de'),
-            SwitchListTile(
-              title: const Text('Lego Avengers',
-                  style: TextStyle(
-                    fontSize: 14.0,
-                  )),
-              value: true,
-              onChanged: (bool value) {},
-            ),
-            SwitchListTile(
-              title: const Text('Lego Star Wars',
-                  style: TextStyle(
-                    fontSize: 14.0,
-                  )),
-              value: true,
-              onChanged: (bool value) {},
+              keyboardType: TextInputType.number,
             ),
             SizedBox(
               height: 10,
@@ -72,7 +45,7 @@ class ContactView extends StatelessWidget {
                     children: [
                       Text('25-05-2022',
                           style: const TextStyle(
-                            color: Colors.lightBlue,
+                            color: Colors.blue,
                             fontWeight: FontWeight.bold,
                           )),
                       IconButton(
