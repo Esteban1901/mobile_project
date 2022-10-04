@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProductItem extends StatelessWidget {
-  const ProductItem({this.title, this.price, this.icon, this.movie});
+class ServiceWidget extends StatelessWidget {
+  const ServiceWidget({this.title, this.price, this.icon, this.movie});
 
   final String title;
   final String price;
