@@ -18,9 +18,9 @@ class _TabsTourPageState extends State<TabsTourPage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Container(
-              child: Text(
-                'Lista de Monedas',
+            AppBar(
+              title: Text(
+                'Lista de Tours',
                 style: TextStyle(fontSize: 20),
               ),
             ),
@@ -59,13 +59,5 @@ class _TabsTourPageState extends State<TabsTourPage> {
         ),
       ),
     );
-  }
-
-  Future getTours() async {
-    TourProvider tours = TourProvider();
-    var respuesta = await tours.getTours();
-    respuesta.forEach((element) {
-      log(element);
-    });
   }
 }

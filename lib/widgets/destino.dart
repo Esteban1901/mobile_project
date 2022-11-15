@@ -35,7 +35,7 @@
 //             height: 300.0,
 //             child: ListView.builder(
 //               scrollDirection: Axis.horizontal,
-//               itemCount: destinos.length,
+//               itemCount: snapshot.data['data'].length,
 //               itemBuilder: (BuildContext context, int index) {
 //                 Destinos destino = destinos[index];
 //                 return Container(
