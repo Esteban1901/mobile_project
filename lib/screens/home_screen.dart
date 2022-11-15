@@ -11,23 +11,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List<IconData> _icons = [
-    FontAwesomeIcons.plus,
-    FontAwesomeIcons.minus,
+    FontAwesomeIcons.mountain,
     FontAwesomeIcons.book,
   ];
-
-  List<int> _counters = [0, 0, 0];
 
   Widget _buildIcon(int index) {
     return GestureDetector(
       onTap: () {
         setState(() {
           _selectedIndex = index;
-          if (_selectedIndex < 2) {
+          if (_selectedIndex < 1) {
             if (_selectedIndex == 0) {
-              _counters[_selectedIndex]++;
-            } else {
-              _counters[_selectedIndex]--;
+              Navigator.pushNamed(context, '/Tours');
             }
           } else {
             Navigator.pushNamed(context, '/certamen');
@@ -48,15 +43,6 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Icon(
               _icons[index],
               size: 25.0,
-              color: _selectedIndex == index
-                  ? Theme.of(context).primaryColor
-                  : Color(0xFFB4C1C4),
-            ),
-          ),
-          Text(
-            '${index < 2 ? _counters[index] : ''}',
-            style: TextStyle(
-              fontSize: 18.0,
               color: _selectedIndex == index
                   ? Theme.of(context).primaryColor
                   : Color(0xFFB4C1C4),
@@ -89,11 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 _buildIcon(0),
                 _buildIcon(1),
-                _buildIcon(2),
               ],
             ),
             SizedBox(height: 20.0),
-            widgetDestino(),
+            //widgetDestino(),
           ],
         ),
       ),

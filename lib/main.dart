@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_project/screens/ProductsScreen.dart';
 import 'package:mobile_project/screens/certamen.dart';
 import 'package:mobile_project/screens/home_screen.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       initialRoute: '/',
       routes: {
+        '/Tours': (context) => TabsTourPage(),
         '/certamen': (context) => certamen(),
       },
     );
